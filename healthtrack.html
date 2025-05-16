@@ -1,0 +1,285 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        #menu {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #4CAF50;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 60px auto;
+            display: none;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            padding: 100px 20px 20px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .introdução h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .introdução p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .treinos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding-top: 40px;
+        }
+
+        .treino-card {
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .treino-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .treino-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .treino-card h3 {
+            padding: 15px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .treino-card p {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .buttons-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .treinos {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">Health Track</div>
+        <div id="menu">
+            <ul>
+                <li><a href="healthtrack.html">Início</a></li>
+                <li><a href="treinos.html">Treinos</a></li>
+                <li><a href="hidratação.html">Hidratação</a></li>
+                <li><a href="alimentação.html">Alimentação</a></li>
+                <li><a href="sono.html">Sono</a></li>
+                <li><a href="rotina.html">Rotina</a></li>
+            </ul>
+
+            <div class="buttons-container">
+                <button class="btn" onclick="window.location.href='login.html'">Login</button>
+                <button class="btn" onclick="mostrarFormulario()">Cadastrar</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="introdução">
+            <h2>Transforme sua rotina com saúde e bem-estar</h2>
+            <p>
+                O <strong>Health Track</strong> é o seu parceiro ideal na jornada rumo a uma vida mais saudável e equilibrada.
+                Nossa missão é te ajudar a atingir seus objetivos de condicionamento físico de forma prática, eficiente e
+                divertida, com treinos feitos sob medida para o seu estilo de vida.
+            </p>
+        </section>
+
+        <section class="treinos">
+             <!--<h2>Alguns Tipos de Treinos</h2>-->
+            <div class="treino-card">
+                <img src="https://via.placeholder.com/400x200" alt="Treino Cardio">
+                <h3>Cardio</h3>
+                <p>Exercícios para melhorar sua saúde cardiovascular e queimar gordura.</p>
+            </div>
+            <div class="treino-card">
+                <img src="https://via.placeholder.com/400x200" alt="Treino Força">
+                <h3>Força</h3>
+                <p>Treinos para aumentar sua resistência e força muscular.</p>
+            </div>
+            <div class="treino-card">
+                <img src="https://via.placeholder.com/400x200" alt="Treino Yoga">
+                <h3>Yoga</h3>
+                <p>Para aumentar sua flexibilidade, equilíbrio e bem-estar mental.</p>
+            </div>
+            <div class="treino-card">
+                <img src="https://via.placeholder.com/400x200" alt="Treino Desafios">
+                <h3>Desafios</h3>
+                <p>Teste seus limites com treinos de alta intensidade.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Health Track. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="form-container" id="formularioCadastro
+
+
+
